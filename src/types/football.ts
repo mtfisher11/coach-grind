@@ -1,3 +1,10 @@
+export type FormationPosition = {
+  x: number;
+  y: number;
+  onLOS: boolean;
+  eligible: boolean;
+};
+
 export type Formation = {
   id: string;
   name: string;
@@ -7,6 +14,32 @@ export type Formation = {
   systems: string[];
   tags: string[];
   defaults: Record<string, [number, number]>; // player -> [x,y]
+  positions?: Record<string, FormationPosition>;
+  category?: string;
+  description?: string;
+};
+
+export type DrawingElement = {
+  id: string;
+  type: "block" | "text" | "line" | "motion" | "arrow" | "curve" | "zone";
+  points: { x: number; y: number; }[];
+  color: string;
+  lineStyle: string;
+  text?: string;
+};
+
+export type Play = {
+  id?: string;
+  name: string;
+  players: any[];
+  routes: any[];
+  down?: number;
+  distance?: number;
+  when_to_call?: string;
+  best_against?: string;
+  strengths?: string[];
+  weaknesses?: string[];
+  coaching_points?: string[];
 };
 
 export function flipHoriz(defaults: Record<string,[number,number]>, width = 1200) {
