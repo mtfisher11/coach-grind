@@ -1,11 +1,8 @@
 import { useMemo, useState } from "react";
 import Field, { Play, Player, Route } from "./components/Field";
 import formations from "./data/catalogs/formations.json";
-import { Formation, flipHoriz } from "./types/football";
+import { flipHoriz } from "./types/football";
 import PlayerActionMenu from "./components/PlayerActionMenu";
-import AIChat from "./components/AIChat";
-import PlayDesigner from "./components/PlayDesigner";
-import { GeneratedPlay, OpenAIService } from "./services/openai.service";
 
 // Choose one to start
 const initialFormationId = "gun_trips_right_11";
@@ -45,8 +42,6 @@ function generateRouteFromAction(player: Player, action: string): Route | null {
 }
 
 export default function App() {
-  const [showAIChat, setShowAIChat] = useState(false);
-  const [showPlayDesigner, setShowPlayDesigner] = useState(false);
   const [selectedPlayer, setSelectedPlayer] = useState<Player | null>(null);
   const [menuPosition, setMenuPosition] = useState({ x: 0, y: 0 });
   const [playerActions, setPlayerActions] = useState<Record<string, string>>({});
@@ -55,15 +50,24 @@ export default function App() {
   // Formation state
   const [formationId, setFormationId] = useState(initialFormationId);
   const [flip, setFlip] = useState(false);
-  
 
   const formation = useMemo(
-    () => (formations as Formation[]).find(f => f.id === formationId)!,
+    () => (formations as any[]).find(f => f.id === formationId)!,
     [formationId]
   );
 
   const anchors = useMemo(() => {
-    return flip ? flipHoriz(formation.defaults) : formation.defaults;
+    // Add offensive line positions to the formation
+    const baseAnchors = formation.defaults;
+    const withOL = {
+      ...baseAnchors,
+      C: [600, 380] as [number, number],
+      LG: [560, 380] as [number, number],
+      RG: [640, 380] as [number, number],
+      LT: [520, 380] as [number, number],
+      RT: [680, 380] as [number, number]
+    };
+    return flip ? flipHoriz(withOL) : withOL;
   }, [formation, flip]);
 
   // Demo: hardcode Mesh routes off anchors (so the field shows something)
@@ -86,8 +90,7 @@ export default function App() {
   const players = useMemo(() => toPlayers(anchors), [anchors]);
   const play: Play = { name: `${formation.name} — Demo`, players, routes };
 
-
-  function handlePlayerClick(player: Player) {
+  function handlePlayerClick(player: Player, event?: any) {
     setSelectedPlayer(player);
     const rect = (event?.target as SVGElement)?.getBoundingClientRect();
     if (rect) {
@@ -113,12 +116,6 @@ export default function App() {
     }
   }
 
-  function handlePlayGenerated(play: GeneratedPlay) {
-    // Could set formation based on AI-generated play
-    setPlayerActions({});
-    setCustomRoutes([]);
-  }
-
   return (
     <div className="app">
       <header>
@@ -130,18 +127,6 @@ export default function App() {
             </div>
           </div>
           <div style={{ display: 'flex', gap: '1rem' }}>
-            <button 
-              className="button"
-              onClick={() => setShowPlayDesigner(!showPlayDesigner)}
-            >
-              {showPlayDesigner ? 'Hide Designer' : 'Play Designer'}
-            </button>
-            <button 
-              className="button"
-              onClick={() => setShowAIChat(!showAIChat)}
-            >
-              {showAIChat ? 'Hide Coach AI' : 'Show Coach AI'}
-            </button>
             <button className="button secondary" onClick={() => window.print()}>
               Export PDF
             </button>
@@ -150,53 +135,9 @@ export default function App() {
       </header>
 
       <main>
-        {showPlaybook ? (
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: '1fr 2fr', 
-            gap: '2rem',
-            alignItems: 'start'
-          }}>
-            <PlaybookManager 
-              currentPlay={play}
-              onSelectPlay={(savedPlay) => {
-                // Load saved play data
-                if (savedPlay.play_data) {
-                  setCustomRoutes(savedPlay.play_data.routes || []);
-                  // Load other play data as needed
-                }
-              }}
-            />
-            <div>
-              <section className="field-section" style={{ marginBottom: '2rem' }}>
-                <div className="field-container">
-                  <Field 
-                    play={play} 
-                    height={600} 
-                    onPlayerClick={handlePlayerClick}
-                    selectedPlayerId={selectedPlayer?.id}
-                  />
-                </div>
-              </section>
-              <PlayAnalysis 
-                analysis={playAnalysis}
-                concept={play.name}
-                formation={formation.name}
-                personnel={formation.personnel}
-              />
-            </div>
-          </div>
-        ) : showPlayDesigner ? (
-          <PlayDesigner 
-            onSave={(play) => {
-              console.log('Play saved:', play);
-              setShowPlayDesigner(false);
-            }}
-          />
-        ) : (
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: showAIChat ? '1fr 400px' : '1fr', 
+          gridTemplateColumns: '1fr', 
           gap: '2rem',
           alignItems: 'start'
         }}>
@@ -230,7 +171,7 @@ export default function App() {
                       color: 'white'
                     }}
                   >
-                    {(formations as Formation[]).map((f) => (
+                    {(formations as any[]).map((f) => (
                       <option key={f.id} value={f.id}>{f.name}</option>
                     ))}
                   </select>
@@ -287,33 +228,8 @@ export default function App() {
                 </div>
               </div>
             </section>
-
-            {/* Blocking Assignments */}
-            <BlockingAssignments 
-              players={players}
-              onAssignmentsChange={setBlockingAssignments}
-              initialAssignments={blockingAssignments}
-            />
-
-            {/* Play Analysis */}
-            <PlayAnalysis 
-              analysis={playAnalysis}
-              concept={play.name.split(' — ')[1] || 'Custom Play'}
-              formation={formation.name}
-              personnel={formation.personnel}
-            />
           </div>
-
-          {showAIChat && (
-            <aside style={{ position: 'sticky', top: '1rem' }}>
-              <AIChat 
-                onPlayGenerated={handlePlayGenerated}
-                currentPlay={null}
-              />
-            </aside>
-          )}
         </div>
-        )}
       </main>
 
       <footer>
