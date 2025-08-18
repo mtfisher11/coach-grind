@@ -1,8 +1,10 @@
 import { useMemo, useState } from "react";
 import Field, { Play, Player, Route } from "./components/Field";
+import PlayAnalysis from "./components/PlayAnalysis";
 import formations from "./data/catalogs/formations.json";
 import { flipHoriz } from "./types/football";
 import PlayerActionMenu from "./components/PlayerActionMenu";
+import { coachGrindAPI, PlayAnalysis as PlayAnalysisType } from "./services/api";
 
 // Choose one to start
 const initialFormationId = "gun_trips_right_11";
@@ -50,6 +52,15 @@ export default function App() {
   // Formation state
   const [formationId, setFormationId] = useState(initialFormationId);
   const [flip, setFlip] = useState(false);
+  
+  // AI Analysis state
+  const [playAnalysis, setPlayAnalysis] = useState<PlayAnalysisType | undefined>();
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [playDescription, setPlayDescription] = useState("");
+  const [isGenerating, setIsGenerating] = useState(false);
+  
+  // Play concept state
+  const [selectedConcept, setSelectedConcept] = useState("mesh");
 
   const formation = useMemo(
     () => (formations as any[]).find(f => f.id === formationId)!,
@@ -88,7 +99,7 @@ export default function App() {
   }, [anchors, customRoutes]);
 
   const players = useMemo(() => toPlayers(anchors), [anchors]);
-  const play: Play = { name: `${formation.name} — Demo`, players, routes };
+  const play: Play = { name: `${formation.name} — ${selectedConcept}`, players, routes };
 
   function handlePlayerClick(player: Player, event?: any) {
     setSelectedPlayer(player);
@@ -115,6 +126,56 @@ export default function App() {
       }
     }
   }
+  
+  async function analyzePlay() {
+    setIsAnalyzing(true);
+    try {
+      const analysis = await coachGrindAPI.analyzePlay(
+        play.name,
+        formation.name,
+        formation.personnel || "11",
+        routes.map(r => ({
+          player: r.from,
+          route: r.label,
+          path: r.path
+        })),
+        selectedConcept
+      );
+      setPlayAnalysis(analysis);
+    } catch (error) {
+      console.error("Failed to analyze play:", error);
+      // Use default analysis if API fails
+      setPlayAnalysis({
+        whenToCall: ["3rd and medium", "Red zone", "2-minute drill"],
+        bestAgainst: ["Cover 2", "Man coverage", "Blitz packages"],
+        strengths: ["Multiple options", "Quick developing", "Hard to defend"],
+        weaknesses: ["Needs pass protection", "Vulnerable to zone drops"],
+        coachingPoints: ["Set proper spacing", "Time the mesh", "Check protection"],
+        qbProgression: ["Pre-snap read", "Mesh concept", "Corner route", "Checkdown"]
+      });
+    } finally {
+      setIsAnalyzing(false);
+    }
+  }
+  
+  async function generatePlayFromDescription() {
+    if (!playDescription.trim()) return;
+    
+    setIsGenerating(true);
+    try {
+      const generatedPlay = await coachGrindAPI.generatePlay(playDescription);
+      
+      // Update formation and routes based on generated play
+      // This would require more complex state management
+      console.log("Generated play:", generatedPlay);
+      alert(`Play generated: ${generatedPlay.name}\n\n${generatedPlay.description}`);
+    } catch (error) {
+      console.error("Failed to generate play:", error);
+      alert("Failed to generate play. Please try again.");
+    } finally {
+      setIsGenerating(false);
+    }
+  }
 
   return (
     <div className="app">
@@ -127,6 +188,13 @@ export default function App() {
             </div>
           </div>
           <div style={{ display: 'flex', gap: '1rem' }}>
+            <button 
+              className="button primary"
+              onClick={analyzePlay}
+              disabled={isAnalyzing}
+            >
+              {isAnalyzing ? "Analyzing..." : "🤖 AI Analysis"}
+            </button>
             <button className="button secondary" onClick={() => window.print()}>
               Export PDF
             </button>
@@ -137,14 +205,51 @@ export default function App() {
       <main>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: '1fr', 
+          gridTemplateColumns: playAnalysis ? '2fr 1fr' : '1fr', 
           gap: '2rem',
           alignItems: 'start'
         }}>
           <div>
             <section className="hero-section">
-              <h2>Formations System</h2>
-              <p>Professional formations with correct player positioning</p>
+              <h2>AI-Powered Play Design</h2>
+              <p>Professional formations with intelligent coaching analysis</p>
+            </section>
+
+            {/* AI Play Generator */}
+            <section style={{
+              background: 'linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1))',
+              borderRadius: '16px',
+              padding: '1.5rem',
+              marginBottom: '2rem',
+              border: '1px solid rgba(59, 130, 246, 0.3)'
+            }}>
+              <div className="kicker" style={{ marginBottom: '1rem', color: '#3B82F6' }}>
+                🤖 AI PLAY GENERATOR
+              </div>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <input
+                  type="text"
+                  placeholder="Describe your play (e.g., 'Trips right with a deep shot to X and RB checkdown')"
+                  value={playDescription}
+                  onChange={(e) => setPlayDescription(e.target.value)}
+                  onKeyPress={(e) => e.key === 'Enter' && generatePlayFromDescription()}
+                  style={{
+                    flex: 1,
+                    padding: '0.75rem',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255,255,255,0.2)',
+                    background: 'rgba(0,0,0,0.3)',
+                    color: 'white'
+                  }}
+                />
+                <button
+                  className="button primary"
+                  onClick={generatePlayFromDescription}
+                  disabled={isGenerating || !playDescription.trim()}
+                >
+                  {isGenerating ? "Generating..." : "Generate Play"}
+                </button>
+              </div>
             </section>
 
             {/* Formation Controls */}
@@ -155,7 +260,7 @@ export default function App() {
               marginBottom: '2rem',
               border: '1px solid rgba(255,255,255,0.1)'
             }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1rem' }}>
                 <div>
                   <div className="kicker" style={{ marginBottom: '0.5rem' }}>FORMATION</div>
                   <select
@@ -174,6 +279,30 @@ export default function App() {
                     {(formations as any[]).map((f) => (
                       <option key={f.id} value={f.id}>{f.name}</option>
                     ))}
+                  </select>
+                </div>
+                <div>
+                  <div className="kicker" style={{ marginBottom: '0.5rem' }}>CONCEPT</div>
+                  <select
+                    className="select"
+                    value={selectedConcept}
+                    onChange={(e) => setSelectedConcept(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(255,255,255,0.2)',
+                      background: 'var(--panel-2)',
+                      color: 'white'
+                    }}
+                  >
+                    <option value="mesh">Mesh</option>
+                    <option value="smash">Smash</option>
+                    <option value="flood">Flood</option>
+                    <option value="verts">4 Verts</option>
+                    <option value="stick">Stick</option>
+                    <option value="levels">Levels</option>
+                    <option value="custom">Custom</option>
                   </select>
                 </div>
                 <div>
@@ -206,7 +335,7 @@ export default function App() {
                       checked={flip}
                       onChange={(e) => setFlip(e.target.checked)}
                     />
-                    Mirror formation (L/R)
+                    Mirror (L/R)
                   </label>
                 </div>
               </div>
@@ -229,11 +358,23 @@ export default function App() {
               </div>
             </section>
           </div>
+          
+          {/* AI Analysis Panel */}
+          {playAnalysis && (
+            <div>
+              <PlayAnalysis
+                analysis={playAnalysis}
+                concept={selectedConcept}
+                formation={formation.name}
+                personnel={formation.personnel}
+              />
+            </div>
+          )}
         </div>
       </main>
 
       <footer>
-        <p>© 2024 CoachGrind • AI-Powered Football Play Design</p>
+        <p>© 2025 CoachGrind • AI-Powered Football Play Design</p>
       </footer>
 
       {/* Player Action Menu */}

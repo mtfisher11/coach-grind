@@ -1,0 +1,152 @@
+[
+  {
+    "id": "stick",
+    "name": "Stick",
+    "description": "Quick passing concept with hitch routes and a middle hook",
+    "routes": {
+      "X": { "type": "hitch", "depth": 6 },
+      "Z": { "type": "hitch", "depth": 6 },
+      "Y": { "type": "hook", "depth": 6, "direction": "middle" },
+      "F": { "type": "flat", "depth": 0 },
+      "RB": { "type": "checkdown", "depth": -2 }
+    },
+    "tags": ["quick_game", "3_step", "vs_zone"],
+    "bestAgainst": ["Cover 3", "Cover 4"],
+    "coachingPoint": "Quick read progression: hook to hitch to flat"
+  },
+  {
+    "id": "flood",
+    "name": "Flood",
+    "description": "Three-level route concept to flood a zone",
+    "routes": {
+      "X": { "type": "corner", "depth": 18 },
+      "Z": { "type": "deep_out", "depth": 12 },
+      "F": { "type": "arrow", "depth": 5 },
+      "Y": { "type": "dig", "depth": 15 },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["zone_beater", "5_step", "high_low"],
+    "bestAgainst": ["Cover 2", "Cover 3"],
+    "coachingPoint": "High-low-flood progression on strong side"
+  },
+  {
+    "id": "verts",
+    "name": "4 Verts",
+    "description": "Four vertical routes with option adjustments",
+    "routes": {
+      "X": { "type": "vertical", "depth": 25, "option": "vs_leverage" },
+      "Z": { "type": "vertical", "depth": 25, "option": "vs_leverage" },
+      "Y": { "type": "seam", "depth": 20, "option": "sit_vs_zone" },
+      "F": { "type": "seam", "depth": 20, "option": "sit_vs_zone" },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["vertical_stretch", "7_step", "shot_play"],
+    "bestAgainst": ["Cover 3", "Cover 4", "Man"],
+    "coachingPoint": "Push vertical unless defender sits, then throttle down"
+  },
+  {
+    "id": "levels",
+    "name": "Levels",
+    "description": "Multiple crossing routes at different depths",
+    "routes": {
+      "X": { "type": "dig", "depth": 18 },
+      "Z": { "type": "shallow_cross", "depth": 6 },
+      "Y": { "type": "deep_over", "depth": 22 },
+      "F": { "type": "drag", "depth": 3 },
+      "RB": { "type": "swing", "depth": -2 }
+    },
+    "tags": ["man_beater", "5_step", "crossers"],
+    "bestAgainst": ["Man", "Cover 1", "Blitz"],
+    "coachingPoint": "Read low to high: drag, shallow, dig, deep over"
+  },
+  {
+    "id": "smash_7",
+    "name": "Smash-7",
+    "description": "Corner-hitch combination with a backside dig",
+    "routes": {
+      "X": { "type": "corner", "depth": 18 },
+      "Z": { "type": "hitch", "depth": 6 },
+      "Y": { "type": "dig", "depth": 15 },
+      "F": { "type": "bubble", "depth": 0 },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["high_low", "5_step", "zone_beater"],
+    "bestAgainst": ["Cover 2", "Cover 4"],
+    "coachingPoint": "High-low the corner: hitch to corner"
+  },
+  {
+    "id": "dagger",
+    "name": "Dagger",
+    "description": "Deep dig with a vertical seam",
+    "routes": {
+      "X": { "type": "deep_dig", "depth": 20 },
+      "Z": { "type": "clearout_go", "depth": 25 },
+      "Y": { "type": "seam", "depth": 22 },
+      "F": { "type": "drag", "depth": 3 },
+      "RB": { "type": "checkdown", "depth": 0 }
+    },
+    "tags": ["play_action", "7_step", "shot_play"],
+    "bestAgainst": ["Cover 2", "Cover 4"],
+    "coachingPoint": "Seam to dig progression, built off play-action"
+  },
+  {
+    "id": "drive",
+    "name": "Drive",
+    "description": "Shallow cross with a deep dig",
+    "routes": {
+      "X": { "type": "shallow_cross", "depth": 8 },
+      "Z": { "type": "deep_dig", "depth": 18 },
+      "Y": { "type": "drag", "depth": 3 },
+      "F": { "type": "flat", "depth": 0 },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["intermediate", "5_step", "crossers"],
+    "bestAgainst": ["Cover 3", "Cover 4"],
+    "coachingPoint": "Shallow drive to deep dig, drag as outlet"
+  },
+  {
+    "id": "mills",
+    "name": "Mills",
+    "description": "Post-dig combination with a hook",
+    "routes": {
+      "X": { "type": "post", "depth": 18 },
+      "Z": { "type": "dig", "depth": 15 },
+      "Y": { "type": "hook", "depth": 10 },
+      "F": { "type": "flat", "depth": 0 },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["play_action", "7_step", "boot"],
+    "bestAgainst": ["Cover 3", "Cover 4"],
+    "coachingPoint": "Boot action, read hook to dig to post"
+  },
+  {
+    "id": "spacing",
+    "name": "Spacing",
+    "description": "Quick game with horizontal stretch",
+    "routes": {
+      "X": { "type": "hitch", "depth": 6 },
+      "Z": { "type": "hitch", "depth": 6 },
+      "Y": { "type": "speed_out", "depth": 6 },
+      "F": { "type": "mini_curl", "depth": 5 },
+      "RB": { "type": "arrow", "depth": 3 }
+    },
+    "tags": ["quick_game", "3_step", "horizontal_stretch"],
+    "bestAgainst": ["Zone", "Soft coverage"],
+    "coachingPoint": "Quick rhythm throw to spacing, work outside-in"
+  },
+  {
+    "id": "four_strong",
+    "name": "Four Strong",
+    "description": "Flood concept with four receivers to one side",
+    "routes": {
+      "X": { "type": "comeback", "depth": 18 },
+      "Z": { "type": "corner", "depth": 18 },
+      "Y": { "type": "out", "depth": 10 },
+      "F": { "type": "flat", "depth": 0 },
+      "RB": { "type": "check_release", "depth": 0 }
+    },
+    "tags": ["flood", "overload", "5_step"],
+    "bestAgainst": ["Cover 2", "Cover 3"],
+    "coachingPoint": "Overload strong side, read flat defender"
+  }
+]

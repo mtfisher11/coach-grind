@@ -158,5 +158,115 @@
     "systems": ["pro_gap"],
     "tags": ["i","under_center"],
     "defaults": { "QB":[600,400], "FB":[600,520], "RB":[600,480], "X":[220,340], "Y":[700,340], "F":[980,320] }
+  },
+  {
+    "id": "i_strong_right_21",
+    "name": "I-Form Strong Right 21P",
+    "personnel": "21",
+    "backfield": "under_center",
+    "strength": "right",
+    "systems": ["pro_gap", "power"],
+    "tags": ["i_form", "strong", "power_run"],
+    "defaults": { "QB":[600,400], "FB":[600,480], "RB":[600,540], "X":[220,340], "Y":[700,340], "Z":[780,320] }
+  },
+  {
+    "id": "i_weak_left_21",
+    "name": "I-Form Weak Left 21P",
+    "personnel": "21",
+    "backfield": "under_center",
+    "strength": "left",
+    "systems": ["pro_gap", "power"],
+    "tags": ["i_form", "weak", "power_run"],
+    "defaults": { "QB":[600,400], "FB":[600,480], "RB":[600,540], "X":[980,340], "Y":[500,340], "Z":[420,320] }
+  },
+  {
+    "id": "i_twins_right_21",
+    "name": "I-Form Twins Right 21P",
+    "personnel": "21",
+    "backfield": "under_center",
+    "strength": "right",
+    "systems": ["west_coast", "pro_gap"],
+    "tags": ["i_form", "twins", "balanced"],
+    "defaults": { "QB":[600,400], "FB":[600,480], "RB":[600,540], "X":[220,340], "Y":[700,340], "Z":[860,320], "F":[940,320] }
+  },
+  {
+    "id": "pistol_strong_11",
+    "name": "Pistol Strong 11P",
+    "personnel": "11",
+    "backfield": "pistol",
+    "strength": "right",
+    "systems": ["pistol", "spread_option"],
+    "tags": ["pistol", "strong", "balanced_run"],
+    "defaults": { "QB":[600,430], "RB":[600,500], "X":[220,340], "Y":[700,340], "Z":[860,320], "F":[940,320] }
+  },
+  {
+    "id": "pistol_ace_11",
+    "name": "Pistol Ace 11P",
+    "personnel": "11",
+    "backfield": "pistol",
+    "strength": "balanced",
+    "systems": ["pistol", "west_coast"],
+    "tags": ["pistol", "ace", "2x2"],
+    "defaults": { "QB":[600,430], "RB":[600,500], "X":[220,340], "Y":[700,340], "Z":[860,320], "F":[980,340] }
+  },
+  {
+    "id": "pistol_wing_12",
+    "name": "Pistol Wing 12P",
+    "personnel": "12",
+    "backfield": "pistol",
+    "strength": "right",
+    "systems": ["pistol", "power"],
+    "tags": ["pistol", "wing", "heavy"],
+    "defaults": { "QB":[600,430], "RB":[600,500], "X":[220,340], "Y":[700,340], "H":[740,360], "Z":[980,340] }
+  },
+  {
+    "id": "spread_empty_10",
+    "name": "Spread Empty 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "balanced",
+    "systems": ["spread", "air_raid"],
+    "tags": ["spread", "empty", "5_wide"],
+    "defaults": { "QB":[600,450], "X":[120,340], "Z":[340,320], "Y":[600,320], "W":[860,320], "F":[1080,340] }
+  },
+  {
+    "id": "spread_trips_10",
+    "name": "Spread Trips Open 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["spread", "air_raid"],
+    "tags": ["spread", "trips", "wide"],
+    "defaults": { "QB":[600,450], "RB":[600,500], "X":[120,340], "Z":[780,320], "W":[900,320], "F":[1020,320] }
+  },
+  {
+    "id": "spread_quad_10",
+    "name": "Spread Quad Bunch 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["spread", "air_raid"],
+    "tags": ["spread", "quad", "bunch"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "X":[120,340], "Z":[820,320], "Y":[880,330], "W":[940,320], "F":[1000,330] }
+  },
+  {
+    "id": "wildcat_heavy_22",
+    "name": "Wildcat Heavy 22P",
+    "personnel": "22",
+    "backfield": "wildcat",
+    "strength": "right",
+    "systems": ["wildcat", "power"],
+    "tags": ["wildcat", "heavy", "direct_snap"],
+    "defaults": { "RB":[600,400], "QB":[340,320], "FB":[640,480], "Y":[700,340], "H":[740,360], "X":[980,340] }
+  },
+  {
+    "id": "jumbo_goal_line_23",
+    "name": "Jumbo Goal Line 23P",
+    "personnel": "23",
+    "backfield": "under_center",
+    "strength": "balanced",
+    "systems": ["goal_line", "power"],
+    "tags": ["jumbo", "goal_line", "heavy"],
+    "defaults": { "QB":[600,400], "FB":[600,480], "RB":[600,540], "Y":[700,340], "H":[500,340], "U":[740,360] }
   }
 ]
