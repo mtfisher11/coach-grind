@@ -1,0 +1,162 @@
+[
+  {
+    "id": "gun_doubles_right_10",
+    "name": "Gun Doubles Right (2x2) 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "balanced",
+    "systems": ["air_raid","spread"],
+    "tags": ["2x2","spread"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[220,340], "Z":[340,320], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "gun_doubles_left_10",
+    "name": "Gun Doubles Left (2x2) 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "balanced",
+    "systems": ["air_raid","spread"],
+    "tags": ["2x2","spread"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "X":[980,340], "Z":[860,320], "W":[340,320], "F":[220,320] }
+  },
+  {
+    "id": "gun_trips_right_10",
+    "name": "Gun Trips Right (3x1) 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["air_raid","spread"],
+    "tags": ["3x1","trips"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[220,340], "Z":[340,320], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "gun_trips_left_10",
+    "name": "Gun Trips Left (3x1) 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "left",
+    "systems": ["air_raid","spread"],
+    "tags": ["3x1","trips"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "X":[980,340], "Z":[860,320], "W":[340,320], "F":[220,320] }
+  },
+  {
+    "id": "gun_trips_right_11",
+    "name": "Gun Trips Right (3x1) 11P (Y Attached)",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["air_raid","west_coast","spread"],
+    "tags": ["3x1","te_attached"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[220,340], "Z":[340,320], "Y":[700,340], "F":[980,320] }
+  },
+  {
+    "id": "gun_trips_left_11",
+    "name": "Gun Trips Left (3x1) 11P (Y Attached)",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "left",
+    "systems": ["air_raid","west_coast","spread"],
+    "tags": ["3x1","te_attached"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "X":[980,340], "Z":[860,320], "Y":[500,340], "F":[220,320] }
+  },
+  {
+    "id": "gun_trey_right_11",
+    "name": "Gun Trey Right (Y Attached) 11P",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["west_coast","spread"],
+    "tags": ["trey","3x1","te_attached"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[220,340], "Y":[700,340], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "gun_bunch_right_11",
+    "name": "Gun Bunch Right 11P",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["west_coast","spread"],
+    "tags": ["bunch","condensed"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[240,340], "Y":[760,330], "W":[740,310], "F":[780,310] }
+  },
+  {
+    "id": "gun_bunch_left_11",
+    "name": "Gun Bunch Left 11P",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "left",
+    "systems": ["west_coast","spread"],
+    "tags": ["bunch","condensed"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "F":[440,310], "Z":[480,310], "Y":[460,330], "X":[960,340] }
+  },
+  {
+    "id": "empty_3x2_00",
+    "name": "Empty 3x2 (5-wide) 00P",
+    "personnel": "00",
+    "backfield": "gun",
+    "strength": "balanced",
+    "systems": ["air_raid","spread"],
+    "tags": ["empty","3x2","5wide"],
+    "defaults": { "QB":[600,450], "X":[220,340], "Z":[340,320], "Y":[600,300], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "empty_4x1_right_00",
+    "name": "Empty 4x1 Right 00P",
+    "personnel": "00",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["spread"],
+    "tags": ["empty","4x1"],
+    "defaults": { "QB":[600,450], "X":[220,340], "Z":[340,320], "Y":[520,320], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "gun_quads_right_10",
+    "name": "Gun Quads Right (4x1) 10P",
+    "personnel": "10",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["spread"],
+    "tags": ["quads","4x1"],
+    "defaults": { "QB":[600,450], "RB":[560,500], "X":[220,340], "Y":[740,330], "W":[820,320], "F":[900,320] }
+  },
+  {
+    "id": "gun_tight_right_11",
+    "name": "Gun Tight Right (Condensed) 11P",
+    "personnel": "11",
+    "backfield": "gun",
+    "strength": "right",
+    "systems": ["west_coast","spread"],
+    "tags": ["condensed"],
+    "defaults": { "QB":[600,450], "RB":[640,500], "X":[420,340], "Z":[480,320], "Y":[700,340], "F":[780,320] }
+  },
+  {
+    "id": "pistol_trips_right_11",
+    "name": "Pistol Trips Right (Y Attached) 11P",
+    "personnel": "11",
+    "backfield": "pistol",
+    "strength": "right",
+    "systems": ["west_coast","pistol"],
+    "tags": ["trips","pistol","te_attached"],
+    "defaults": { "QB":[600,450], "RB":[600,500], "X":[220,340], "Y":[700,340], "W":[860,320], "F":[980,320] }
+  },
+  {
+    "id": "pro_right_21",
+    "name": "Pro Right (Split backs) 21P",
+    "personnel": "21",
+    "backfield": "under_center",
+    "strength": "right",
+    "systems": ["west_coast","pro_gap"],
+    "tags": ["pro","under_center"],
+    "defaults": { "QB":[600,400], "FB":[600,520], "HB":[600,480], "X":[220,340], "Y":[700,340], "F":[980,320] }
+  },
+  {
+    "id": "i_right_21",
+    "name": "I-Right 21P",
+    "personnel": "21",
+    "backfield": "under_center",
+    "strength": "right",
+    "systems": ["pro_gap"],
+    "tags": ["i","under_center"],
+    "defaults": { "QB":[600,400], "FB":[600,520], "RB":[600,480], "X":[220,340], "Y":[700,340], "F":[980,320] }
+  }
+]

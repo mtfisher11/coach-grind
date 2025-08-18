@@ -1,0 +1,8 @@
+[
+  { "id": "iz", "type": "run", "name": "Inside Zone", "notes": "Covered/uncovered; climb to LB." },
+  { "id": "oz", "type": "run", "name": "Outside Zone", "notes": "Stretch; reach steps; press landmark." },
+  { "id": "duo", "type": "run", "name": "Duo", "notes": "Double teams; downhill; RB reads Mike." },
+  { "id": "power", "type": "run", "name": "Power", "notes": "Backside guard pull; kick/lead rules." },
+  { "id": "counter", "type": "run", "name": "Counter", "notes": "GT pulls; wrap/kick." },
+  { "id": "draw", "type": "run", "name": "Draw", "notes": "OL pass-set then release; patient RB." }
+]

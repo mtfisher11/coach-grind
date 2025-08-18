@@ -1,0 +1,8 @@
+[
+  { "id": "scat_5", "type": "pass", "name": "Scat (5-man)", "notes": "RB free; QB hot rules." },
+  { "id": "half_slide_r", "type": "pass", "name": "Half-Slide Right", "notes": "Backside man, frontside slide; RB scans Mike→Will." },
+  { "id": "half_slide_l", "type": "pass", "name": "Half-Slide Left", "notes": "Mirror of right." },
+  { "id": "bob", "type": "pass", "name": "BOB (Big-on-Big)", "notes": "OL on DL; RB on LB/edge." },
+  { "id": "full_slide", "type": "pass", "name": "Full Slide", "notes": "OL slide; RB handles edge/late." },
+  { "id": "max_pro", "type": "pass", "name": "Max Protect (7-man)", "notes": "TE stays, RB scans; 2-man route combos." }
+]

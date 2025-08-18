@@ -1,0 +1,242 @@
+{
+  "formations": [
+    {
+      "id": "i_form",
+      "name": "I-Formation",
+      "personnel": "21",
+      "category": "under_center",
+      "description": "Classic power formation with FB and HB aligned behind QB",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "WR": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 375, "onLOS": false, "eligible": true },
+        "FB": { "x": 600, "y": 400, "onLOS": false, "eligible": true },
+        "HB": { "x": 600, "y": 430, "onLOS": false, "eligible": true }
+      },
+      "tags": ["power", "play_action", "under_center"]
+    },
+    {
+      "id": "strong_right",
+      "name": "Strong Right",
+      "personnel": "12",
+      "category": "under_center",
+      "description": "Two tight ends to the right, power formation",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE1": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "TE2": { "x": 720, "y": 350, "onLOS": true, "eligible": true },
+        "WR": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 375, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 420, "onLOS": false, "eligible": true }
+      },
+      "tags": ["power", "heavy", "red_zone"]
+    },
+    {
+      "id": "trips_right",
+      "name": "Trips Right",
+      "personnel": "11",
+      "category": "shotgun",
+      "description": "3x1 formation with three receivers to the right",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "X": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "Z": { "x": 850, "y": 350, "onLOS": true, "eligible": true },
+        "S": { "x": 750, "y": 360, "onLOS": false, "eligible": true },
+        "TE": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 380, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 420, "onLOS": false, "eligible": true }
+      },
+      "tags": ["spread", "pass", "3x1"]
+    },
+    {
+      "id": "bunch_right",
+      "name": "Bunch Right",
+      "personnel": "11",
+      "category": "shotgun",
+      "description": "Compressed 3x1 formation for picks and rubs",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "X": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "Z": { "x": 800, "y": 340, "onLOS": false, "eligible": true },
+        "S": { "x": 830, "y": 350, "onLOS": true, "eligible": true },
+        "TE": { "x": 860, "y": 360, "onLOS": false, "eligible": true },
+        "QB": { "x": 600, "y": 380, "onLOS": false, "eligible": true },
+        "RB": { "x": 560, "y": 420, "onLOS": false, "eligible": true }
+      },
+      "tags": ["spread", "compressed", "picks"]
+    },
+    {
+      "id": "empty_3x2",
+      "name": "Empty 3x2",
+      "personnel": "10",
+      "category": "shotgun",
+      "description": "No running back, 5 receivers",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "X": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "Z": { "x": 400, "y": 360, "onLOS": false, "eligible": true },
+        "S": { "x": 800, "y": 360, "onLOS": false, "eligible": true },
+        "Y": { "x": 900, "y": 350, "onLOS": true, "eligible": true },
+        "W": { "x": 1000, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 380, "onLOS": false, "eligible": true }
+      },
+      "tags": ["spread", "pass", "empty", "5_wide"]
+    },
+    {
+      "id": "pistol_strong",
+      "name": "Pistol Strong",
+      "personnel": "12",
+      "category": "pistol",
+      "description": "Pistol with two TEs, balanced run/pass",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE1": { "x": 510, "y": 350, "onLOS": true, "eligible": true },
+        "TE2": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "WR": { "x": 900, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 385, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 410, "onLOS": false, "eligible": true }
+      },
+      "tags": ["pistol", "balanced", "play_action"]
+    },
+    {
+      "id": "wildcat",
+      "name": "Wildcat",
+      "personnel": "22",
+      "category": "special",
+      "description": "Direct snap to RB, unbalanced line",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE1": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "TE2": { "x": 720, "y": 350, "onLOS": true, "eligible": true },
+        "WR": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 850, "y": 360, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 380, "onLOS": false, "eligible": true },
+        "FB": { "x": 650, "y": 410, "onLOS": false, "eligible": true }
+      },
+      "tags": ["trick", "run", "unbalanced"]
+    },
+    {
+      "id": "goal_line",
+      "name": "Goal Line",
+      "personnel": "23",
+      "category": "heavy",
+      "description": "Maximum protection, 3 TEs, 2 RBs",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE1": { "x": 510, "y": 350, "onLOS": true, "eligible": true },
+        "TE2": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "TE3": { "x": 720, "y": 350, "onLOS": true, "eligible": false },
+        "QB": { "x": 600, "y": 375, "onLOS": false, "eligible": true },
+        "FB": { "x": 600, "y": 400, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 425, "onLOS": false, "eligible": true }
+      },
+      "tags": ["goal_line", "heavy", "short_yardage"]
+    },
+    {
+      "id": "twins_left",
+      "name": "Twins Left",
+      "personnel": "11",
+      "category": "shotgun",
+      "description": "2x2 balanced formation",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "X": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "Z": { "x": 350, "y": 360, "onLOS": false, "eligible": true },
+        "S": { "x": 850, "y": 360, "onLOS": false, "eligible": true },
+        "TE": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 380, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 420, "onLOS": false, "eligible": true }
+      },
+      "tags": ["balanced", "2x2", "spread"]
+    },
+    {
+      "id": "singleback_ace",
+      "name": "Singleback Ace",
+      "personnel": "12",
+      "category": "singleback",
+      "description": "Balanced formation with 2 TEs",
+      "positions": {
+        "C": { "x": 600, "y": 350, "onLOS": true, "eligible": false },
+        "LG": { "x": 570, "y": 350, "onLOS": true, "eligible": false },
+        "RG": { "x": 630, "y": 350, "onLOS": true, "eligible": false },
+        "LT": { "x": 540, "y": 350, "onLOS": true, "eligible": false },
+        "RT": { "x": 660, "y": 350, "onLOS": true, "eligible": false },
+        "TE1": { "x": 510, "y": 350, "onLOS": true, "eligible": true },
+        "TE2": { "x": 690, "y": 350, "onLOS": true, "eligible": true },
+        "WR1": { "x": 200, "y": 350, "onLOS": true, "eligible": true },
+        "WR2": { "x": 1000, "y": 350, "onLOS": true, "eligible": true },
+        "QB": { "x": 600, "y": 375, "onLOS": false, "eligible": true },
+        "RB": { "x": 600, "y": 420, "onLOS": false, "eligible": true }
+      },
+      "tags": ["balanced", "singleback", "12_personnel"]
+    }
+  ],
+  "rules": {
+    "offense": {
+      "minimum_on_los": 7,
+      "maximum_players": 11,
+      "eligible_numbers": {
+        "description": "Eligible receivers must wear numbers 1-49 or 80-89",
+        "ranges": [[1, 49], [80, 89]]
+      },
+      "ineligible_numbers": {
+        "description": "Ineligible receivers must wear numbers 50-79",
+        "ranges": [[50, 79]]
+      },
+      "formation_requirements": [
+        "Must have exactly 7 players on the line of scrimmage",
+        "Only the two players on the ends of the line are eligible receivers",
+        "Players covered by another player on the LOS are ineligible",
+        "All players in the backfield are eligible receivers",
+        "Cannot have more than 4 players in the backfield"
+      ]
+    }
+  },
+  "personnel_groups": {
+    "10": { "rb": 1, "te": 0, "wr": 4, "name": "10 Personnel (4 WR)" },
+    "11": { "rb": 1, "te": 1, "wr": 3, "name": "11 Personnel (3 WR)" },
+    "12": { "rb": 1, "te": 2, "wr": 2, "name": "12 Personnel (2 TE)" },
+    "13": { "rb": 1, "te": 3, "wr": 1, "name": "13 Personnel (3 TE)" },
+    "20": { "rb": 2, "te": 0, "wr": 3, "name": "20 Personnel (2 RB)" },
+    "21": { "rb": 2, "te": 1, "wr": 2, "name": "21 Personnel (I-Form)" },
+    "22": { "rb": 2, "te": 2, "wr": 1, "name": "22 Personnel (Heavy)" },
+    "23": { "rb": 2, "te": 3, "wr": 0, "name": "23 Personnel (Jumbo)" }
+  }
+}

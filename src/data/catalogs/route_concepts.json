@@ -1,0 +1,8 @@
+[
+  { "id": "mesh", "name": "Mesh", "notes": "Shallow crossers create rub; hi-low with corner/flat." },
+  { "id": "smash", "name": "Smash", "notes": "Corner over hitch; hi-low on cornerback." },
+  { "id": "stick", "name": "Stick", "notes": "Quick out + stick; triangle stretch." },
+  { "id": "flood", "name": "Flood", "notes": "Three-level stretch to sideline." },
+  { "id": "verts", "name": "Four Verts", "notes": "Split safeties; bender vs 2-high." },
+  { "id": "levels", "name": "Levels", "notes": "Hi/low on hook; staggered in-breakers." }
+]

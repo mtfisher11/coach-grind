@@ -1,0 +1,16 @@
+{
+  "name": "Trips Right Mesh — Half-Slide Right",
+  "formation_id": "trips_right",
+  "protection_id": "half_slide_r",
+  "concept_id": "mesh",
+  "personnel": "11",
+  "positions": {
+    "QB": "Read Z shallow → X mesh → Y corner → F sit/post → RB swing; hot off Will.",
+    "OL": "Half-slide R; C set ID; LT/LG man; RG/RT slide.",
+    "RB": "Scan Mike→Will; if clean, swing.",
+    "Y": "Corner 12–15y; landmark top of numbers.",
+    "Z": "Shallow 3–5y; first window.",
+    "X": "Mesh 3–5y; avoid illegal pick.",
+    "F": "Option: sit vs zone; post vs man."
+  }
+}
